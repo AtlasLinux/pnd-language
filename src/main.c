@@ -19,15 +19,6 @@ void remove_outer_quotes(char* str) {
   }
 }
 
-void parse_and_print(char* input) {
-  TokenStreamer streamer = token_streamer_init(input);
-
-  Token* token = token_streamer_next(&streamer);
-  SExp* sexp = parse_sexp(&streamer, token);
-
-  print_sexp(sexp);
-  printf("\n");
-
 void print_usage(char* name) {
   fprintf(stderr,
           "Usage: %s [options] <code>\n\n"
@@ -96,7 +87,7 @@ int main(int argc, char** argv) {
   if (tokenize) {
     token_streamer streamer = token_streamer_init(input);
 
-    Token* token = token_streamer_next(&streamer);
+    token_t* token = token_streamer_next(&streamer);
 
     while ((token->type != TOKEN_EOF)) {
       token_print(token);
