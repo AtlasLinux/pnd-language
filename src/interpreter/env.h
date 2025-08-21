@@ -1,4 +1,3 @@
-#ifndef PND_INTPRETER_ENV_H_
 #ifndef PND_INTERPRETER_ENV_H_
 #define PND_INTERPRETER_ENV_H_
 #include <stdlib.h>
